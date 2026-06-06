@@ -1,0 +1,41 @@
+@page "/planner"
+@inject HttpClient Http
+
+<h1>Layout Planer</h1>
+
+<div class="grid">
+  <section class="card">
+    <label>Scheibenradius (mm)</label>
+    <input type="number" @bind="DiskRadius" />
+    <label>Randabstand (mm)</label>
+    <input type="number" @bind="EdgeClearance" />
+    <label>Lochdurchmesser, kommagetrennt</label>
+    <input @bind="HoleText" />
+    <button @onclick="Generate">Layout generieren</button>
+  </section>
+  <section class="card">
+    <h3>Ergebnis</h3>
+    <pre>@Result</pre>
+  </section>
+</div>
+
+@code {
+    double DiskRadius = 50;
+    double EdgeClearance = 5;
+    string HoleText = "12,16,20,20,25";
+    string Result = "Noch kein Layout generiert.";
+
+    async Task Generate()
+    {
+        var request = new {
+            diskRadius = DiskRadius,
+            edgeClearance = EdgeClearance,
+            holeClearance = 3,
+            depth = 12,
+            material = "Aluminium",
+            holeDiameters = HoleText.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(double.Parse).ToArray()
+        };
+        var response = await Http.PostAsJsonAsync("api/layout/suggest", request);
+        Result = await response.Content.ReadAsStringAsync();
+    }
+}

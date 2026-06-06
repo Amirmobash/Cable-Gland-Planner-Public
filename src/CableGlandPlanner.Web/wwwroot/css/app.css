@@ -1,0 +1,9 @@
+body { margin:0; font-family: Segoe UI, Arial, sans-serif; background:#fff7ef; color:#242424; }
+.shell { display:flex; min-height:100vh; }
+.sidebar { width:260px; background:#ff8c00; color:white; padding:24px; display:flex; flex-direction:column; gap:16px; }
+.sidebar a { color:white; text-decoration:none; font-weight:600; }
+.content { flex:1; padding:32px; }
+.card { background:white; border-radius:14px; padding:24px; box-shadow: 0 8px 30px #0001; }
+.grid { display:grid; grid-template-columns: 380px 1fr; gap:24px; }
+input, textarea { width:100%; padding:10px; margin:8px 0 16px; border:1px solid #ddd; border-radius:8px; }
+button, .button { background:#ff8c00; color:white; border:0; padding:12px 18px; border-radius:8px; text-decoration:none; display:inline-block; }
