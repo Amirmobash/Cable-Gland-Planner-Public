@@ -1,0 +1,2 @@
+Scaffold file for configs/test
+Derived from Cable Gland Planner specification.

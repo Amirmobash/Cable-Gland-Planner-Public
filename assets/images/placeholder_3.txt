@@ -1,0 +1,2 @@
+Scaffold file for assets/images
+Derived from Cable Gland Planner specification.

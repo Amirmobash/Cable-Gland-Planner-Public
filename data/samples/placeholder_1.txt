@@ -1,0 +1,2 @@
+Scaffold file for data/samples
+Derived from Cable Gland Planner specification.
