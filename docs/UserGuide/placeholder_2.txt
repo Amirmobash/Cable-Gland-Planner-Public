@@ -1,0 +1,2 @@
+Scaffold file for docs/UserGuide
+Derived from Cable Gland Planner specification.

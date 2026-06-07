@@ -1,0 +1,2 @@
+Scaffold file for docker/prometheus
+Derived from Cable Gland Planner specification.

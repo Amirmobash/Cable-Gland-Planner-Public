@@ -1,0 +1,2 @@
+Scaffold file for logs
+Derived from Cable Gland Planner specification.
